@@ -1,0 +1,66 @@
+{
+	"info": {
+		"_postman_id": "4e3f497d-29f8-4baf-a1c2-c9c089beb5a8",
+		"name": "ManyToMany",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33957944"
+	},
+	"item": [
+		{
+			"name": "Add Students",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"studentId\":32,\r\n        \"name\":\"arun\",\r\n        \"courses\":[\r\n            {\r\n                \"courseId\":112,\r\n                \"courseName\":\"springboot\"\r\n            },\r\n            {\r\n                \"courseId\":113,\r\n                \"courseName\":\"Java\"\r\n            }\r\n        ]\r\n    },\r\n     {\r\n        \"studentId\":33,\r\n        \"name\":\"ammu\",\r\n        \"courses\":[\r\n            {\r\n                \"courseId\":212,\r\n                \"courseName\":\"siebel\"\r\n            },\r\n            {\r\n                \"courseId\":213,\r\n                \"courseName\":\"orm\"\r\n            }\r\n        ]\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/addStudent",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"addStudent"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Courses",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"courseId\":213,\r\n        \"courseName\":\"java\",\r\n        \"students\":[\r\n            {\r\n                \"studentId\":31,\r\n                \"name\":\"ARUN\"\r\n            }\r\n            ,\r\n            {\r\n                \"studentId\":33,\r\n                \"name\":\"ammu\"\r\n            }\r\n        ]\r\n    },\r\n     {\r\n        \"courseId\":212,\r\n        \"courseName\":\"SQL\",\r\n        \"students\":[\r\n            {\r\n                \"studentId\":31,\r\n                \"name\":\"ARUN\"\r\n            }\r\n            ,\r\n            {\r\n                \"studentId\":33,\r\n                \"name\":\"ammu\"\r\n            }\r\n        ]\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/addCourse",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"addCourse"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
